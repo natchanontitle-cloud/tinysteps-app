@@ -256,7 +256,7 @@ td{padding:7px 8px;border-bottom:1px solid #f3f4f6;vertical-align:middle}
 </div>
 <div id="pub-page" style="display:none"><div style="min-height:100dvh;overflow-y:auto;padding:16px;background:var(--bg)"><div id="pub-content"></div></div></div>
 <div class="ov" id="ov" onclick="closeOv(event)"><div class="drawer"><div class="dhandle"></div><div id="db"></div></div></div><script>
-const GAS='https://script.google.com/macros/s/AKfycbyz0bdub8AD7CDLdFa9VlZ80y3yddCqEP_JvcOCu5DguCJJ-2KXfS6n-Ym5RGVVTSbphg/exec';
+const GAS='https://script.google.com/macros/s/AKfycbwRijfhJ6tTtiqPE_iKyVCz1lGn1z6lJC52p7o9M02rEBxAfqgSszE1DWKxC-ukGXTLlA/exec';
 let LANG='en';
 const T={
   en:{excellent:'Excellent',good:'Good',developing:'Developing',emerging:'Emerging',save:'Save',saving:'Saving...',back:'← Back'},
@@ -369,7 +369,7 @@ async function GET(action,params={}){
   try{const r=await fetch(u.toString(),{redirect:'follow'});return await r.json();}catch(e){return{error:e.message};}
 }
 async function POST(action,payload={}){
-  try{const r=await fetch(GAS,{method:'POST',body:JSON.stringify({action,payload}),headers:{'Content-Type':'application/json'},redirect:'follow'});return await r.json();}catch(e){return{error:e.message};}
+  try{const r=await fetch(GAS,{method:'POST',body:JSON.stringify({action,payload}),headers:{'Content-Type':'text/plain'},redirect:'follow'});return await r.json();}catch(e){return{error:e.message};}
 }
 
 let loginRole='teacher';
