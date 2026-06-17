@@ -612,7 +612,7 @@ function openAddStudent(){
 }
 async function doAddStudent(){
   const fn=$('fn').value.trim(),nn=$('nn').value.trim(),db=$('db').value,pa=$('pa').value.trim();
-  if(!fn||!nn||!db||!pa){toast('Please fill all required fields (*)');return}
+  if(!fn||!nn||!pa){toast('Please fill all required fields (*)');return}
   const btn=$('asb');btn.disabled=true;btn.textContent='Adding...';
   const res=await POST('addStudent',{name:fn,nickname:nn,birthdate:db,gender:$('sx').value,enrollDate:$('en2').value,package:$('pkg').value,parentName:pa,parentPhone:$('ph').value,parentEmail:$('em').value,notes:$('nt').value});
   if(res.error){toast('Error: '+res.error);btn.disabled=false;btn.textContent='Add Student';return}
